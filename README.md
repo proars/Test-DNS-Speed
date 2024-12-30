@@ -1,1 +1,1 @@
-# Test-DNS-Speed
+# Python Script to Test DNS Speed
