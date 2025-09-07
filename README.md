@@ -155,161 +155,63 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you find this tool useful, please consider giving it a star on GitHub! It helps others discover the project and motivates further development.
 
-## 📚 Related Projects
 
-- [DNS Performance Test](https://github.com/topics/dns-performance)
-- [Network Tools](https://github.com/topics/network-tools)
-- [DNS Tools](https://github.com/topics/dns-tools)
 
-## 🔍 Keywords
+## 📋 Output Files and Configuration
 
-DNS, Speed Test, Network Performance, DNS Resolver, Python, Network Tools, DNS Benchmark, DNS Performance, Network Monitoring, System Administration, DevOps, Network Optimization
+### Generated Files
 
-## Requirements
+- `dns_test_history.json`: Tracks resolver failures and success rates
+- `dns_test.log`: Detailed error messages and events
+- `dns_stats.json`: Comprehensive resolver statistics including:
+  - Response time metrics (min/max/avg/median)
+  - Standard deviation
+  - Success rates
+  - Query counts
 
-- Python 3.x
-- Required libraries (install via requirements.txt):
-  - `dnspython`: DNS library for Python
-  - `rich`: Terminal formatting and progress bars
+### Default Resolvers
 
-## Installation
-
-1. Clone this repository:
-
-```bash
-git clone https://github.com/proars/Test-DNS-Speed.git
-cd Test-DNS-Speed
-```
-
-1. Install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Usage
-
-1. Run the script with default settings:
-
-```bash
-python main.py
-```
-
-Or customize the behavior with command-line arguments:
-
-```bash
-python main.py --timeout 3.0 --retries 3 --workers 15 --max-failures 5 --min-success-rate 0.7
-```
-
-Available options:
-
-- `--timeout`: DNS query timeout in seconds (default: 2.0)
-- `--retries`: Maximum retries for failed queries (default: 2)
-- `--workers`: Number of parallel workers (default: 10)
-- `--max-failures`: Maximum consecutive failures before dropping a resolver (default: 3)
-- `--min-success-rate`: Minimum success rate to consider resolver healthy (default: 0.5)
-
-The tool will test each configured DNS resolver against a list of popular domains and display:
-
-- Average response times for each resolver with description
-- Success rate of queries (successful/total)
-- Detailed error reporting for failed queries
-- Sorted results from fastest to slowest
-- Parallel processing status
-
-Example output:
-
-```plaintext
-⚠️ The following DNS resolvers have been dropped due to consistent failures:
-   - 192.168.10.38 (Custom DNS 2): 3 consecutive failures
-
-Testing 5 DNS resolvers across 15 domains...
-
-✅ 8.8.8.8 (Google Public DNS): Average response time: 45.23 ms (15/15 successful queries)
-✅ 1.1.1.1 (Cloudflare DNS): Average response time: 38.12 ms (15/15 successful queries)
-✅ 9.9.9.9 (Quad9 DNS): Average response time: 52.45 ms (14/15 successful queries)
-❌ 192.168.10.17 (Custom DNS 1): No successful queries (Failed 2 times, 1 attempt remaining)
-
-Sorted results (fastest to slowest):
-🚀 1.1.1.1 (Cloudflare DNS): 38.12 ms
-🚀 8.8.8.8 (Google Public DNS): 45.23 ms
-🚀 9.9.9.9 (Quad9 DNS): 52.45 ms
-
-⚠️ Warning: The following DNS resolvers will be dropped in the next run:
-   - 192.168.10.17 (Custom DNS 1): 2 consecutive failures
-```
-
-## Configuration
-
-The script includes several popular DNS resolvers by default:
+The tool comes pre-configured with popular DNS resolvers:
 
 - Google Public DNS (8.8.8.8)
 - Cloudflare DNS (1.1.1.1)
 - Quad9 DNS (9.9.9.9)
 - OpenDNS (208.67.222.222)
-- Custom DNS resolvers
 
-You can customize the following settings in the script:
-
-```python
-TIMEOUT = 2.0                  # DNS query timeout in seconds
-MAX_RETRIES = 2               # Number of retries for failed queries
-MAX_WORKERS = 10              # Number of parallel workers
-MAX_CONSECUTIVE_FAILURES = 3   # Number of failures before dropping a resolver
-```
-
-## Output Files
-
-The tool generates several output files:
-
-1. `dns_test_history.json`: History of DNS resolver failures and success rates
-2. `dns_test.log`: Detailed log file with error messages and events
-3. `dns_stats.json`: Historical statistics for each resolver including:
-   - Minimum response time
-   - Maximum response time
-   - Average response time
-   - Median response time
-   - Standard deviation
-   - Success rate
-   - Total queries
-
-When a resolver fails all queries in consecutive test runs (default: 3) or its success rate falls below the minimum threshold (default: 50%), it will be automatically dropped from future tests until manually re-added.
-
-To add or modify DNS resolvers, edit the `DNS_RESOLVERS` list in the script:
-
-```python
-DNS_RESOLVERS = [
-    DNSResolver('8.8.8.8', 'Google Public DNS'),
-    DNSResolver('1.1.1.1', 'Cloudflare DNS'),
-    # Add your custom resolvers here
-]
-```
-
-## Learn More
+## ❓ Learn More
 
 For detailed information about DNS resolver speed testing, visit [How to Test DNS Resolver Speed](https://arstech.net/how-to-test-dns-resolver-speed/)
 
-## Contributing
+## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
+We welcome contributions! Here's how you can help:
 
-- Report issues
-- Suggest improvements
+- Report bugs and suggest features
+- Improve documentation
 - Submit pull requests
+- Share your experience
 
-## License
+Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
-This project is open-source and available under the [MIT License](LICENSE). This means you can:
+## ⚖️ License
 
-- ✔️ Use it commercially
-- ✔️ Modify it
-- ✔️ Distribute it
-- ✔️ Use it privately
+This project is open source under the [MIT License](LICENSE).
 
-The only requirement is to include the original copyright and license notice in any copy of the software/source.
+### Permissions
+
+- ✔️ Use commercially
+- ✔️ Modify
+- ✔️ Distribute
+- ✔️ Use privately
+
+### License Terms
+
+- Include the original license and copyright notice
 
 ---
 
-## Keywords
+Made with ❤️ by [proars](https://github.com/proars)
 
-DNS speed test, DNS resolver benchmark, Python DNS tools, network performance, DNS response time, DNS latency measurement
+## 🔍 Keywords
+
+DNS, Speed Test, Network Performance, DNS Resolver, Python, Network Tools, DNS Benchmark, DNS Performance, Network Monitoring, System Administration, DevOps, Network Optimization
