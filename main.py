@@ -105,8 +105,8 @@ DNS_RESOLVERS = [
     DNSResolver('1.1.1.1', 'Cloudflare DNS'),
     DNSResolver('9.9.9.9', 'Quad9 DNS'),
     DNSResolver('208.67.222.222', 'OpenDNS'),
-    DNSResolver('192.168.10.17', 'Custom DNS 1'),
-    DNSResolver('192.168.10.38', 'Custom DNS 2'),
+    DNSResolver('xxx.xxx.xxx.xxx', 'Custom DNS 1'),
+  
 ]
 
 # Popular domains for testing
@@ -114,6 +114,13 @@ TEST_DOMAINS = [
     "example.com", "google.com", "amazon.com", "apple.com", "microsoft.com",
     "facebook.com", "yahoo.com", "wikipedia.org", "github.com", "stackoverflow.com",
     "netflix.com", "reddit.com", "linkedin.com", "bing.com", "quora.com",
+    "twitter.com", "instagram.com", "nytimes.com", "cnn.com", "bbc.com",
+    "whatsapp.com", "tiktok.com", "paypal.com", "ebay.com", "adobe.com",
+    "dropbox.com", "cloudflare.com", "spotify.com", "pinterest.com", "zoom.us",
+    "salesforce.com", "wordpress.com", "medium.com", "bitbucket.org", "archive.org",
+    "live.com", "msn.com", "weebly.com", "mozilla.org", "oracle.com",
+    "booking.com", "airbnb.com", "twitch.tv", "imgur.com", "duckduckgo.com",
+    "ikea.com", "hulu.com", "bloomberg.com", "forbes.com", "telegram.org"
 ]
 
 def test_resolver_speed(resolver: DNSResolver, domain: str, config: Config) -> DNSResult:
